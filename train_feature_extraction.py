@@ -7,20 +7,20 @@ import time
 
 nb_classes=43
 learning_rate = 0.001
-EPOCHS = 2
+EPOCHS = 10
 BATCH_SIZE = 128
 
 # TODO: Load traffic signs data.
-training_file = '../CarND-Traffic-Signs/train.p'
-testing_file = '../CarND-Traffic-Signs/test.p'
+training_file = 'train.p'
+#testing_file = '../CarND-Traffic-Signs/test.p'
 
 with open(training_file, mode='rb') as f:
     train = pickle.load(f)
-with open(testing_file, mode='rb') as f:
-    test = pickle.load(f)
+#with open(testing_file, mode='rb') as f:
+#    test = pickle.load(f)
 
 X_train, y_train = train['features'], train['labels']
-X_test, y_test = test['features'], test['labels']
+#X_test, y_test = test['features'], test['labels']
 
 
 # TODO: Split data into training and validation sets.
@@ -104,3 +104,13 @@ with tf.Session() as sess:
         print("Validation Loss =", loss_val)
         print("Validation Accuracy =", acc_val)
         print("")
+
+
+
+# RESULT:
+#Epoch 10
+#Time: 53.950 seconds
+#Training Loss = None
+#Training Accuracy = 1.0
+#Validation Loss = 0.112027580114
+#Validation Accuracy = 0.970925784376
